@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
 
                     /*****************************************************************************************
                     * This block opens the connection shows a message that we connected and then closes.
-                    ******************************************************************************************/
+                    *****************************************************************************************/
 
                     MySqlCommand insert_DB = sqlConnection.CreateCommand();
 
