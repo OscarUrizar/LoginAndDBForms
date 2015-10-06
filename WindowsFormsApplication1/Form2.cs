@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
                     ******************************************************************************************/
                     MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
 
-                    /*****************************************************************************************
+                    /****************************************************************************************
                     * This block opens the connection shows a message that we connected and then closes.
                     *****************************************************************************************/
 
