@@ -19,6 +19,11 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
+            /******************************************
+            * This is converting the date time picker 
+            * format to time only
+            *******************************************/
+
             goal1StartTime.Format = DateTimePickerFormat.Time;
             goal1StartTime.ShowUpDown = true;
 
@@ -44,6 +49,11 @@ namespace WindowsFormsApplication1
             goal4EndTime.ShowUpDown = true;
 
         }
+
+        /*
+        * Creating the streamReader to read and write
+        * to files and saving the file name
+        */
 
         StreamReader readFile;
         StreamReader openFile;
@@ -121,6 +131,12 @@ namespace WindowsFormsApplication1
                            document.LoadFromFile(openFileDialog1.FileName);
 
                            //Save doc file to a txt format.
+
+                        /************************************************************
+                        * Drashtee this is where the file gets saved as a .txt files
+                        * named Test, we need it to be saved as something that changes
+                        * 
+                        *************************************************************/
 
                                document.SaveToFile("Test.txt", FileFormat.Txt);
                             }
