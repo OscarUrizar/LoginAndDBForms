@@ -132,6 +132,21 @@ namespace WindowsFormsApplication1
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Document document = new Document();
+
+                document.LoadFromFile("Test.txt");
+                document.SaveToFile("PDFTest.pdf", FileFormat.PDF);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The file could not be saved: " + ex.Message);
+            }
+        }
     }
 
 }
