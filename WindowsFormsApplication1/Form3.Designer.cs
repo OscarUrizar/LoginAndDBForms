@@ -88,6 +88,7 @@
             this.label1.Size = new System.Drawing.Size(437, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Create a new progress note";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // contract_tb
             // 
