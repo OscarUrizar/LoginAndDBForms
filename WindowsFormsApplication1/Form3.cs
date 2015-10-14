@@ -50,34 +50,21 @@ namespace WindowsFormsApplication1
 
         }
 
-        /*
+        /**********************************************
         * Creating the streamReader to read and write
         * to files and saving the file name
-        */
+        ***********************************************/
 
         StreamReader readFile;
         StreamReader openFile;
         string fileName;
 
-
-        private void WordDocViewer(string fileName)
-
-        {
-            try
-
-            {
-                System.Diagnostics.Process.Start(fileName);
-            }
-            catch (Exception ex)
-
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-
-
-
-        }
-
+        
+        /**********************************************************
+        * This is the method that send the text from the word doc
+        * to the contract_tb control it reads from the text file 
+        * created in the importButton_Click event handler method
+        ***********************************************************/
         private void TextToBox()
         {
 
@@ -110,14 +97,15 @@ namespace WindowsFormsApplication1
             }
 
         }
-
-
-
+        
 
         private void importButton_Click(object sender, EventArgs e)
         {
+            // clears the textbox before a contract is loaded
 
             contract_tb.Clear();
+
+            // opening the openfiledialog1 control to allow the user to select a file
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                    {
@@ -129,25 +117,36 @@ namespace WindowsFormsApplication1
                            Document document = new Document();
 
                            document.LoadFromFile(openFileDialog1.FileName);
+                    
 
-                           //Save doc file to a txt format.
+                    /************************************************************
+                    * Drashtee this is where the file gets saved as a .txt files
+                    * named Test, we need it to be saved as something that changes
+                    * so that we dont get the file is in use by another process
+                    * error, do this however you see fit. To test if it works, 
+                    * open 1 contract and then try to open another after the first
+                    * contract is successfully loaded
+                    *************************************************************/
 
-                        /************************************************************
-                        * Drashtee this is where the file gets saved as a .txt files
-                        * named Test, we need it to be saved as something that changes
-                        * 
-                        *************************************************************/
+                    //Save doc file to a txt format.
 
-                               document.SaveToFile("Test.txt", FileFormat.Txt);
+                    document.SaveToFile("Test.txt", FileFormat.Txt);
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("The file could not be read: " + ex.Message);
                             }
+
                 TextToBox();
 
             }
         }
+
+
+        /*******************************************************************************
+        * This is a test button labeled "save as pdf" on the create new progress note form
+        * This is the code to load from a file and read from that file to a new fileformat
+        ********************************************************************************/
 
         private void button2_Click(object sender, EventArgs e)
         {
