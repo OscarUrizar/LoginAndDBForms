@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-
+        
         /*******************************************************************************
         * This is a test button labeled "save as pdf" on the create new progress note form
         * This is the code to load from a file and read from that file to a new fileformat
